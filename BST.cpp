@@ -118,7 +118,7 @@ BSTNode* BST::search(Currency* searchee) const {
 	}
 	return nullptr;
 }
-std::string printBreadthFirst() const{
+std::string BST::printBreadthFirst() const{
 	std::string output;
 	if(!root)
 		return output; 
