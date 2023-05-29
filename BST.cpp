@@ -102,3 +102,19 @@ bool BST::deleteNode(Currency* removee) {
 
 	return false;
 }
+BSTNode* BST::search(Currency* searchee) const {
+	BSTNode* curr = root;
+
+	while (curr) {
+		if (*(curr->data) == *searchee) {
+			return curr;
+		}
+		else if (curr->data->isGreater(searchee)) {
+			curr = curr->left;
+		}
+		else {
+			curr = curr->right;
+		}
+	}
+	return nullptr;
+}
