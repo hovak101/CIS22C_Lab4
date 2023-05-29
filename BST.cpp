@@ -118,3 +118,22 @@ BSTNode* BST::search(Currency* searchee) const {
 	}
 	return nullptr;
 }
+std::string printBreadthFirst() const{
+	std::string output;
+	if(!root)
+		return output; 
+	Queue nodeQueue;
+	nodeQueue.enqueue(root);
+	
+	while (!nodeQueue.isEmpty()){
+		BSTNode*curr = nodeQueue.dequeue();
+		
+		output += curr->data->toString();
+		output += " ";
+		if(curr -> left)
+			nodeQueue.enqueue(curr->left);
+		if(curr->right)
+			nodeQueue.enqueue(curr->right);
+	}
+	return output;	
+}
