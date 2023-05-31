@@ -14,11 +14,15 @@ int main() {
 		new Krone(151.00)};
 
 	BST tree;
+
 	for (int i = 0; i < 20; i++) {
 		tree.insertNode(arr[i]);
 	}
 
-	tree.deleteNode(arr[0]);
+	cout << "BreathdFirst: " << tree.printBreadthFirst() << endl;
+	cout << "InOrder: " << tree.printInOrder() << endl;
+	cout << "PreOrder: " << tree.printPreOrder() << endl; 
+	cout << "PostOrder: " << tree.printPostOrder() << endl; 
 
 	return 0;
 }                                                                              

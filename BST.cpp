@@ -6,6 +6,7 @@ bool BST::insertNode(Currency* insertee) {
 
 	if (count == 0) {
 		root = newNode;
+		count++;
 		return true;
 	}
 
@@ -142,6 +143,7 @@ std::string BST::printBreadthFirst() const {
 		currNode = search(currData);
 		output += currNode->data->toString();
 		output += " ";
+		//std::cout << currNode->data->toString() << " ";
 		if (currNode->left) {
 			nodeQueue.enqueue(currNode->left->data);
 		}
@@ -153,4 +155,31 @@ std::string BST::printBreadthFirst() const {
 	}
 
 	return output;	
+}
+
+std::string BST::printInOrderRecur(BSTNode* curr) const {
+	if (curr == nullptr) {
+		return "";
+	}
+	
+	return printInOrderRecur(curr->left) + curr->data->toString() + " " +
+		printInOrderRecur(curr->right);
+}
+
+std::string BST::printPreOrderRecur(BSTNode* curr) const {
+	if (curr == nullptr) {
+		return "";
+	}
+
+	return curr->data->toString() + " " + printPreOrderRecur(curr->left) +
+		printPreOrderRecur(curr->right);
+}
+
+std::string BST::printPostOrderRecur(BSTNode* curr) const {
+	if (curr == nullptr) {
+		return "";
+	}
+
+	return printPostOrderRecur(curr->left) + printPostOrderRecur(curr->right) + 
+		curr->data->toString() + " ";
 }
