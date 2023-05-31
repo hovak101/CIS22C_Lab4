@@ -17,7 +17,7 @@ private:
 public:
 	BST() { root = nullptr; count = 0; }
 
-	void insertNode(Currency* insertee);
+	bool insertNode(Currency* insertee);
 	bool deleteNode(Currency* removee);
 	BSTNode* search(Currency* searchee) const;
 	int getCount() const { return count; }

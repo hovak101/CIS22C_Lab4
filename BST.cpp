@@ -1,38 +1,43 @@
 #include "BST.h"
 
-void BST::insertNode(Currency* insertee) {
+bool BST::insertNode(Currency* insertee) {
 	BSTNode* newNode = new BSTNode();
 	newNode->data = new Krone(*insertee);
 
 	if (count == 0) {
 		root = newNode;
+		return true;
 	}
-	else {
-		BSTNode* curr = root;
 
-		while (curr) {
-			if (curr->data->isGreater(insertee)) {
-				if (curr->left) {
-					curr = curr->left;
-				}
-				else {
-					curr->left = newNode;
-					curr = nullptr;
-				}
+	BSTNode* curr = root;
+
+	while (curr) {
+		if (curr->data->isEqual(insertee)) {
+			return false;
+		}
+
+		if (curr->data->isGreater(insertee)) {
+			if (curr->left) {
+				curr = curr->left;
 			}
 			else {
-				if (curr->right) {
-					curr = curr->right;
-				}
-				else {
-					curr->right = newNode;
-					curr = nullptr;
-				}
+				curr->left = newNode;
+				curr = nullptr;
+			}
+		}
+		else {
+			if (curr->right) {
+				curr = curr->right;
+			}
+			else {
+				curr->right = newNode;
+				curr = nullptr;
 			}
 		}
 	}
 
 	count++;
+	return true;
 }
 
 bool BST::deleteNode(Currency* removee) {
@@ -128,18 +133,24 @@ std::string BST::printBreadthFirst() const {
 	}
 
 	Queue nodeQueue;
-	BSTNode* curr = nullptr;
+	BSTNode* currNode = nullptr;
+	Currency* currData = nullptr;
 	nodeQueue.enqueue(root->data);
 	
 	while (!nodeQueue.isEmpty()) {
-		curr = nodeQueue.dequeue();
-		
-		output += curr->data->toString();
+		currData = nodeQueue.dequeue();
+		currNode = search(currData);
+		output += currNode->data->toString();
 		output += " ";
-		if(curr -> left)
-			nodeQueue.enqueue(curr->left);
-		if(curr->right)
-			nodeQueue.enqueue(curr->right);
+		if (currNode->left) {
+			nodeQueue.enqueue(currNode->left->data);
+		}
+		if (currNode->right) {
+			nodeQueue.enqueue(currNode->right->data);
+		}
+
+		delete currData;
 	}
+
 	return output;	
 }
