@@ -1,5 +1,4 @@
 #include "BST.h"
-#include "Krone.h"
 
 void BST::insertNode(Currency* insertee) {
 	BSTNode* newNode = new BSTNode();
@@ -102,11 +101,12 @@ bool BST::deleteNode(Currency* removee) {
 
 	return false;
 }
+
 BSTNode* BST::search(Currency* searchee) const {
 	BSTNode* curr = root;
 
 	while (curr) {
-		if (*(curr->data) == *searchee) {
+		if (curr->data->isEqual(searchee)) {
 			return curr;
 		}
 		else if (curr->data->isGreater(searchee)) {
@@ -116,17 +116,23 @@ BSTNode* BST::search(Currency* searchee) const {
 			curr = curr->right;
 		}
 	}
+
 	return nullptr;
 }
-std::string BST::printBreadthFirst() const{
-	std::string output;
-	if(!root)
-		return output; 
+
+std::string BST::printBreadthFirst() const {
+	std::string output = "";
+
+	if (root == nullptr) {
+		return output;
+	}
+
 	Queue nodeQueue;
-	nodeQueue.enqueue(root);
+	BSTNode* curr = nullptr;
+	nodeQueue.enqueue(root->data);
 	
-	while (!nodeQueue.isEmpty()){
-		BSTNode*curr = nodeQueue.dequeue();
+	while (!nodeQueue.isEmpty()) {
+		curr = nodeQueue.dequeue();
 		
 		output += curr->data->toString();
 		output += " ";

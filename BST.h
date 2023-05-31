@@ -5,6 +5,8 @@
 #include <string>
 #include "BSTNode.h"
 #include "Currency.h"
+#include "Krone.h"
+#include "Queue.h"
 
 class BST 
 {

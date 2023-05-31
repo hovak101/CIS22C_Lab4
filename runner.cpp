@@ -14,7 +14,7 @@ int main() {
 		new Krone(151.00)};
 
 	BST tree;
-	for (int i = 0; i < 6; i++) {
+	for (int i = 0; i < 20; i++) {
 		tree.insertNode(arr[i]);
 	}
 

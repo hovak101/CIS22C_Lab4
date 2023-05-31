@@ -25,7 +25,8 @@ Currency::Currency(const Currency& origObject) {
 
 /* Sets whole or frac field to user-given value.
  * Pre: whole >= 0, frac >= 0
- * Post: reassigns whole or frac field of object.
+ * Post: reassigns whole or frac fields, throws exception if whole or frac are
+ * negative.
  * Return:
  */
 void Currency::setWhole(int whole) {
@@ -46,7 +47,8 @@ void Currency::setFrac(int frac) {
 
 /* This function adds another object of the same currency to this one.
  * Pre: other must be of same class as caller.
- * Post: currency objects are added.
+ * Post: currency objects are added, throws exception if other is not of they
+ * same currency type.
  * Return:
  */
 void Currency::add(Currency* other) {
@@ -68,7 +70,8 @@ void Currency::add(Currency* other) {
 /* This function subtracts another object of the same currency from this one.
  * Pre: other must be of same class as caller, other cannot have a greater value than
  * the caller object.
- * Post: currency objects are subtracted.
+ * Post: currency objects are subtracted, throws excpetion if other is not of
+ * the same currency type or if the result of the subtraction is negative.
  * Return:
  */
 void Currency::subtract(Currency* other) {
@@ -95,7 +98,7 @@ void Currency::subtract(Currency* other) {
 
 /* This function compares another object of the same type to this one for equality.
  * Pre: other must be of same class as caller.
- * Post:
+ * Post: throw exception if other is not of the same type as caller.
  * Return: returns true if both the whole fields and frac fields are equal to each other.
  */
 bool Currency::isEqual(Currency* other) const {
@@ -109,7 +112,7 @@ bool Currency::isEqual(Currency* other) const {
 /* This function checks if the value of this object is greater than the value of
  * another object of the same type.
  * Pre: other must be of same class as caller.
- * Post:
+ * Post: throws exception if other is not of the same type as this.
  * Return: returns true if this object is greater than the value of other, otherwise
  * returns false.
  */
@@ -142,6 +145,11 @@ void Currency::print() const {
 	std::cout << this->toString();
 }
 
+/*
+ * pre:
+ * post:
+ * return: string of currency value in the form <whole.frac currencyName>
+ */
 std::string Currency::toString() const {
 
 	std::string ret = "";
@@ -155,3 +163,4 @@ std::string Currency::toString() const {
 
 	return ret;
 }
+
