@@ -1,0 +1,20 @@
+Breadth First Traversal: 57.12 Krone 23.44 Krone 87.43 Krone 18.36 Krone 44.55 Krone 68.99 Krone 111.22 Krone 11.00 Krone 20.21 Krone 36.18 Krone 48.48 Krone 77.77 Krone 101.00 Krone 543.21 Krone 1.00 Krone 21.00 Krone 51.00 Krone 345.67 Krone 251.00 Krone 151.00 Krone 
+In Order Traversal: 1.00 Krone 11.00 Krone 18.36 Krone 20.21 Krone 21.00 Krone 23.44 Krone 36.18 Krone 44.55 Krone 48.48 Krone 51.00 Krone 57.12 Krone 68.99 Krone 77.77 Krone 87.43 Krone 101.00 Krone 111.22 Krone 151.00 Krone 251.00 Krone 345.67 Krone 543.21 Krone 
+Pre Order Traversal: 57.12 Krone 23.44 Krone 18.36 Krone 11.00 Krone 1.00 Krone 20.21 Krone 21.00 Krone 44.55 Krone 36.18 Krone 48.48 Krone 51.00 Krone 87.43 Krone 68.99 Krone 77.77 Krone 111.22 Krone 101.00 Krone 543.21 Krone 345.67 Krone 251.00 Krone 151.00 Krone 
+Post Order Traversal: 1.00 Krone 11.00 Krone 21.00 Krone 20.21 Krone 18.36 Krone 36.18 Krone 51.00 Krone 48.48 Krone 44.55 Krone 23.44 Krone 77.77 Krone 68.99 Krone 101.00 Krone 151.00 Krone 251.00 Krone 345.67 Krone 543.21 Krone 111.22 Krone 87.43 Krone 57.12 Krone 
+
+Breadth First Traversal: 57.12 Krone 23.44 Krone 87.43 Krone 18.36 Krone 48.48 Krone 68.99 Krone 151.00 Krone 11.00 Krone 20.21 Krone 36.18 Krone 51.00 Krone 77.77 Krone 101.00 Krone 543.21 Krone 1.00 Krone 345.67 Krone 251.00 Krone 
+In Order Traversal: 1.00 Krone 11.00 Krone 18.36 Krone 20.21 Krone 23.44 Krone 36.18 Krone 48.48 Krone 51.00 Krone 57.12 Krone 68.99 Krone 77.77 Krone 87.43 Krone 101.00 Krone 151.00 Krone 251.00 Krone 345.67 Krone 543.21 Krone 
+Pre Order Traversal: 57.12 Krone 23.44 Krone 18.36 Krone 11.00 Krone 1.00 Krone 20.21 Krone 48.48 Krone 36.18 Krone 51.00 Krone 87.43 Krone 68.99 Krone 77.77 Krone 151.00 Krone 101.00 Krone 543.21 Krone 345.67 Krone 251.00 Krone 
+Post Order Traversal: 1.00 Krone 11.00 Krone 20.21 Krone 18.36 Krone 36.18 Krone 51.00 Krone 48.48 Krone 23.44 Krone 77.77 Krone 68.99 Krone 101.00 Krone 251.00 Krone 345.67 Krone 543.21 Krone 151.00 Krone 87.43 Krone 57.12 Krone 
+
+Breadth First Traversal: 57.12 Krone 23.44 Krone 87.43 Krone 18.36 Krone 48.48 Krone 68.99 Krone 151.00 Krone 11.00 Krone 20.21 Krone 36.18 Krone 51.00 Krone 77.77 Krone 101.00 Krone 543.21 Krone 1.00 Krone 23.49 Krone 345.67 Krone 28.12 Krone 251.00 Krone 
+In Order Traversal: 1.00 Krone 11.00 Krone 18.36 Krone 20.21 Krone 23.44 Krone 23.49 Krone 28.12 Krone 36.18 Krone 48.48 Krone 51.00 Krone 57.12 Krone 68.99 Krone 77.77 Krone 87.43 Krone 101.00 Krone 151.00 Krone 251.00 Krone 345.67 Krone 543.21 Krone 
+Pre Order Traversal: 57.12 Krone 23.44 Krone 18.36 Krone 11.00 Krone 1.00 Krone 20.21 Krone 48.48 Krone 36.18 Krone 23.49 Krone 28.12 Krone 51.00 Krone 87.43 Krone 68.99 Krone 77.77 Krone 151.00 Krone 101.00 Krone 543.21 Krone 345.67 Krone 251.00 Krone 
+Post Order Traversal: 1.00 Krone 11.00 Krone 20.21 Krone 18.36 Krone 28.12 Krone 23.49 Krone 36.18 Krone 51.00 Krone 48.48 Krone 23.44 Krone 77.77 Krone 68.99 Krone 101.00 Krone 251.00 Krone 345.67 Krone 543.21 Krone 151.00 Krone 87.43 Krone 57.12 Krone 
+
+Breadth First Traversal: 57.12 Krone 23.44 Krone 87.43 Krone 18.36 Krone 48.48 Krone 68.99 Krone 151.00 Krone 11.00 Krone 20.21 Krone 36.18 Krone 51.00 Krone 77.77 Krone 101.00 Krone 543.21 Krone 1.00 Krone 23.49 Krone 345.67 Krone 28.12 Krone 251.00 Krone 
+In Order Traversal: 1.00 Krone 11.00 Krone 18.36 Krone 20.21 Krone 23.44 Krone 23.49 Krone 28.12 Krone 36.18 Krone 48.48 Krone 51.00 Krone 57.12 Krone 68.99 Krone 77.77 Krone 87.43 Krone 101.00 Krone 151.00 Krone 251.00 Krone 345.67 Krone 543.21 Krone 
+Pre Order Traversal: 57.12 Krone 23.44 Krone 18.36 Krone 11.00 Krone 1.00 Krone 20.21 Krone 48.48 Krone 36.18 Krone 23.49 Krone 28.12 Krone 51.00 Krone 87.43 Krone 68.99 Krone 77.77 Krone 151.00 Krone 101.00 Krone 543.21 Krone 345.67 Krone 251.00 Krone 
+Post Order Traversal: 1.00 Krone 11.00 Krone 20.21 Krone 18.36 Krone 28.12 Krone 23.49 Krone 36.18 Krone 51.00 Krone 48.48 Krone 23.44 Krone 77.77 Krone 68.99 Krone 101.00 Krone 251.00 Krone 345.67 Krone 543.21 Krone 151.00 Krone 87.43 Krone 57.12 Krone 
+

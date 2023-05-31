@@ -20,9 +20,10 @@ private:
 
 public:
 	BST() { root = nullptr; count = 0; }
+	~BST();
 
-	bool insertNode(Currency* insertee);
-	bool deleteNode(Currency* removee);
+	void insertNode(Currency* insertee);
+	void deleteNode(Currency* removee);
 	BSTNode* search(Currency* searchee) const;
 	int getCount() const { return count; }
 	bool isEmpty() const { return count == 0; }

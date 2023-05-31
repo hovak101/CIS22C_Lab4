@@ -1,47 +1,47 @@
 #include "BST.h"
 
-bool BST::insertNode(Currency* insertee) {
+void BST::insertNode(Currency* insertee) {
 	BSTNode* newNode = new BSTNode();
 	newNode->data = new Krone(*insertee);
 
 	if (count == 0) {
 		root = newNode;
 		count++;
-		return true;
 	}
+	else {
 
-	BSTNode* curr = root;
+		BSTNode* curr = root;
 
-	while (curr) {
-		if (curr->data->isEqual(insertee)) {
-			return false;
-		}
+		while (curr) {
+			if (curr->data->isEqual(insertee)) {
+				throw "Cannot insert duplicate node.";
+			}
 
-		if (curr->data->isGreater(insertee)) {
-			if (curr->left) {
-				curr = curr->left;
+			if (curr->data->isGreater(insertee)) {
+				if (curr->left) {
+					curr = curr->left;
+				}
+				else {
+					curr->left = newNode;
+					curr = nullptr;
+				}
 			}
 			else {
-				curr->left = newNode;
-				curr = nullptr;
+				if (curr->right) {
+					curr = curr->right;
+				}
+				else {
+					curr->right = newNode;
+					curr = nullptr;
+				}
 			}
 		}
-		else {
-			if (curr->right) {
-				curr = curr->right;
-			}
-			else {
-				curr->right = newNode;
-				curr = nullptr;
-			}
-		}
-	}
 
-	count++;
-	return true;
+		count++;
+	}
 }
 
-bool BST::deleteNode(Currency* removee) {
+void BST::deleteNode(Currency* removee) {
 	BSTNode* curr = root;
 	BSTNode* par = nullptr;
 
@@ -84,16 +84,19 @@ bool BST::deleteNode(Currency* removee) {
 				// swap succesor data with current data
 				delete curr->data;
 				curr->data = new Krone(*succ->data);
-				delete succ;
+
 				if (prevSucc->left == succ) {
-					prevSucc->left = nullptr;
+					prevSucc->left = succ->right;
 				}
 				else {
-					prevSucc->right = nullptr;
+					prevSucc->right = succ->right;
 				}
+
+				delete succ;
 			}
+
 			count--;
-			return true;
+			return;
 		}
 
 		par = curr;
@@ -105,7 +108,7 @@ bool BST::deleteNode(Currency* removee) {
 		}
 	}
 
-	return false;
+	throw "Cannot remove a node that doesn't exist.";
 }
 
 BSTNode* BST::search(Currency* searchee) const {
@@ -143,7 +146,6 @@ std::string BST::printBreadthFirst() const {
 		currNode = search(currData);
 		output += currNode->data->toString();
 		output += " ";
-		//std::cout << currNode->data->toString() << " ";
 		if (currNode->left) {
 			nodeQueue.enqueue(currNode->left->data);
 		}
@@ -182,4 +184,10 @@ std::string BST::printPostOrderRecur(BSTNode* curr) const {
 
 	return printPostOrderRecur(curr->left) + printPostOrderRecur(curr->right) + 
 		curr->data->toString() + " ";
+}
+
+BST::~BST() {
+	while (count != 0) {
+		deleteNode(root->data);
+	}
 }
